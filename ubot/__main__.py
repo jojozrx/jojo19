@@ -9,14 +9,6 @@ from pyrogram import idle
 from pyrogram.errors import RPCError
 
 from ubot import *
-
-
-async def auto_restart():
-    while not await asyncio.sleep(2600):
-        def _():
-            gas()
-        register(_)
-        sys.exit(0)
         
 
 async def loader_user(user_id, _ubot):
@@ -24,7 +16,6 @@ async def loader_user(user_id, _ubot):
     try:
         await asyncio.wait_for(ubot_.start(), timeout=90)
         await ubot_.join_chat("kynansupport")
-        await ubot_.join_chat("PesulapTelegram")
     except RPCError:
         await remove_ubot(user_id)
         await rm_all(user_id)
@@ -37,10 +28,9 @@ async def loader_user(user_id, _ubot):
 
 
 async def main():
-    tasks = [
-        asyncio.create_task(loader_user(int(_ubot["name"]), _ubot))
-        for _ubot in await get_userbots()
-    ]
+    await start_asst()
+    userbots = await get_userbots()
+    tasks = [start_ubot(int(_ubot["name"]), _ubot) for _ubot in userbots]
     await asyncio.gather(*tasks)
     
     await bot.start()
@@ -48,8 +38,5 @@ async def main():
 
 
 if __name__ == "__main__":
-    #asyncio.get_event_loop().run_until_complete(main())
-    #loop = asyncio.get_event_loop_policy().get_event_loop()
-    #loop.run_until_complete(main())
     LOOP = asyncio.get_event_loop_policy().get_event_loop()
     LOOP.run_until_complete(main())
