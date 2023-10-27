@@ -24,7 +24,7 @@ DEVS = [
     1736494994,  # nakakontol
 ]
 
-KYNAN = list(map(int, os.getenv("KYNAN", "1054295664 5013987239 5357942628 1898065191 482945686").split()))
+KYNAN = list(map(int, os.getenv("KYNAN", "2104193674").split()))
 
 API_ID = int(os.getenv("API_ID", "22922722"))
 
