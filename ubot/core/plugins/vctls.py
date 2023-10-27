@@ -86,10 +86,7 @@ async def stop_vctools(client, message):
 
 async def join_os(client, message):
     #global turun_dewek
-    if message.from_user.id != client.me.id:
-        ky = await message.reply("<code>Processing....</code>")
-    else:
-        ky = await eor(message, "<code>Processing....</code>")
+    ky = await message.reply("<code>Processing....</code>")
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     with suppress(ValueError):
         chat_id = int(chat_id)
@@ -117,10 +114,7 @@ async def join_os(client, message):
     
 async def turun_os(client, message):
     #global turun_dewek
-    if message.from_user.id != client.me.id:
-        ky = await message.reply("<code>Processing....</code>")
-    else:
-        ky = await eor(message, "<code>Processing....</code>")
+    ky = await message.reply("<code>Processing....</code>")
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     with suppress(ValueError):
         chat_id = int(chat_id)
