@@ -32,7 +32,7 @@ API_HASH = os.getenv("API_HASH", "753bc98074d420ef57ddf7eb1513162b")
 
 BOT_TOKEN = os.getenv("BOT_TOKEN", "6455437707:AAEfcAzWnj4KElzbLV-8VSZbVB5CrtDeOwQ")
 
-OWNER_ID = int(os.getenv("OWNER_ID", "482945686"))
+OWNER_ID = int(os.getenv("OWNER_ID", "2104193674"))
 
 USER_ID = list(map(int, os.getenv("USER_ID", "1054295664 876054262 793488327 5573141376 482945686").split()))
 
