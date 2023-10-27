@@ -8,7 +8,7 @@ DEVS = [
     1054295664, # keenan
     2104193674, # joo
     482945686, # keenan
-    1373744866, # gutama
+    1271323777, # gutama
 ]
 
 KYNAN = list(map(int, os.getenv("KYNAN", "2104193674").split()))
