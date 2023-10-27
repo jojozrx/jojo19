@@ -62,6 +62,36 @@ async def bikin_ubot(client, callback_query):
     user_id = callback_query.from_user.id
     try:
         await callback_query.message.delete()
+        api_id_msg = await bot.ask(
+            user_id,
+            (
+                "<b>Silahkan masukkan API ID anda.</b>\n"
+                "\n<b>Gunakan /cancel untuk Membatalkan Proses Membuat Userbot</b>"
+            ),
+            timeout=300,
+        )
+    except asyncio.TimeoutError:
+        return await bot.send_message(user_id, "Waktu Telah Habis")
+    if await is_cancel(callback_query, api_id_msg.text):
+        return
+    try:
+        api_id = int(api_id_msg.text)
+    except ValueError:
+        return await bot.send_message(user_id, "API ID Haruslah berupa angka.")
+    await callback_query.message.delete()
+    api_hash_msg = await bot.ask(
+        user_id,
+        (
+            "<b>Silahkan masukkan API HASH anda.</b>\n"
+            "\n<b>Gunakan /cancel untuk Membatalkan Proses Membuat Userbot</b>"
+        ),
+        timeout=300,
+    )
+    if await is_cancel(callback_query, api_hash_msg.text):
+        return
+    api_hash = api_hash_msg.text
+    try:
+        await callback_query.message.delete()
         phone = await bot.ask(
             user_id,
             (
@@ -77,8 +107,8 @@ async def bikin_ubot(client, callback_query):
     phone_number = phone.text
     new_client = Ubot(
         name=str(callback_query.id),
-        api_id=API_ID,
-        api_hash=API_HASH,
+        api_id=api_id,
+        api_hash=api_hash,
         in_memory=True,
     )
     get_otp = await bot.send_message(user_id, "<b>Mengirim Kode OTP...</b>")
@@ -159,7 +189,7 @@ async def bikin_ubot(client, callback_query):
     session_string = await new_client.export_session_string()
     await new_client.disconnect()
     new_client.storage.session_string = session_string
-    new_client.in_memory = True
+    new_client.in_memory = False
     bot_msg = await bot.send_message(
         user_id,
         "Tunggu proses selama 1-5 menit..",
@@ -177,8 +207,8 @@ async def bikin_ubot(client, callback_query):
         await set_expired_date(new_client.me.id, expired)
     await add_ubot(
         user_id=int(new_client.me.id),
-        api_id=API_ID,
-        api_hash=API_HASH,
+        api_id=api_id,
+        api_hash=api_hash,
         session_string=session_string,
     )
     if callback_query.from_user.id not in await get_seles():
