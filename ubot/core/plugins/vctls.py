@@ -102,7 +102,6 @@ async def join_os(client, message):
                         file,
                     ),
                 ),
-                stream_type=StreamType().local_stream,
             )
             await sleep(2)
             await ky.edit(f"❏ <b>Berhasil Join Voice Chat</b>\n└ <b>Chat :</b><code>{message.chat.title}</code>")
