@@ -11,7 +11,7 @@ from pyrogram.errors import RPCError
 from ubot import *
         
 
-async def loader_user(user_id, _ubot):
+async def loader_user(_ubot, user_id):
     ubot_ = Ubot(**_ubot)
     try:
         await asyncio.wait_for(ubot_.start(), timeout=90)
@@ -28,10 +28,12 @@ async def loader_user(user_id, _ubot):
 
 
 async def main():
-    tasks = []
-    for _ubot in await get_userbots():
-        tasks.append(asyncio.create_task(start_ubot(int(_ubot["name"]), _ubot)))
-    await asyncio.gather(*tasks)
+    userbots = await get_userbots()
+    #tasks = [start_ubot(int(_ubot["name"]), _ubot) for _ubot in userbots]
+    #await asyncio.gather(*tasks)
+    for _ubot in userbots:
+        await loader_user(_ubot, int(_ubot["name"]))
+    
     await bot.start()
     await asyncio.gather(loadPlugins(), installPeer(), expiredUserbots(), idle())
 
