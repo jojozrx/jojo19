@@ -14,12 +14,3 @@ async def _(client, inline_query):
 @PY.CALLBACK("alv_cls")
 async def _(client, callback_query):
     await alive_close(client, callback_query)
-
-absen = [
-  "**Hadir Sayang** 😘",
-  ]
-  
-  
-@register(incoming=True, from_users=DEVS, pattern=r"^Absen$")
-async def Jooabsen(ganteng):
-    await ganteng.reply(choice(absen))
