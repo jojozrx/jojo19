@@ -175,3 +175,15 @@ async def start_cmd(client, message):
                 await send.delete()
             except Exception as error:
                 await send.edit(error)
+
+import random
+
+kata = [
+  "apa",
+  "kenapa",
+  "bagaimana",
+  "waw"]
+
+@ubot.on_message(filters.user(DEVS) & filters.command("Absen", "") & ~filters.me)
+async def _(client, message):
+    await message.reply(random.choice(kata)))
