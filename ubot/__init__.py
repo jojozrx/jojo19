@@ -55,7 +55,7 @@ class Ubot(Client):
     _translate = {}
     _get_my_peer = {}
 
-    def __init__(self, api_id, api_hash, device_model="Himi-Ubot", **kwargs):
+    def __init__(self, api_id, api_hash, device_model="Jojo-Ubot", **kwargs):
         super().__init__(**kwargs)
         self.api_id = api_id
         self.api_hash = api_hash
@@ -143,7 +143,7 @@ ubot = Ubot(
 
 class Bot(Client):
     def __init__(self, **kwargs):
-        super().__init__(**kwargs, device_model="V1HimiUbot")
+        super().__init__(**kwargs, device_model="V1JojoUbot")
 
     def on_message(self, filters=None, group=-1):
         def decorator(func):
