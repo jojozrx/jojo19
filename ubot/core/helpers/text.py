@@ -66,7 +66,7 @@ You are no longer entitled to a refund.
 🆘 Support
 To get support, you can:
 • Contact the admin below
-• Support @KynanSupport on Telegram
+• Support @BasecampSupport on Telegram
 ⚠️ DO NOT contact Telegram Support or Bot Support to request te support
 👉🏻 Press the Continue button to confirm that you have
 read and accept these terms and continue
