@@ -23,7 +23,7 @@ OWNER_ID = int(os.getenv("OWNER_ID", "2104193674"))
 
 USER_ID = list(map(int, os.getenv("USER_ID", "2104193674").split()))
 
-LOG_UBOT = int(os.getenv("LOG_UBOT", "-4018158982"))
+LOG_UBOT = int(os.getenv("LOG_UBOT", "-1002003800097"))
 
 LOG_SELLER = int(os.getenv("LOG_SELLER", "-1002078982723"))
 
