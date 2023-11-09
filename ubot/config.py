@@ -40,5 +40,5 @@ OPENAI_KEY = os.getenv(
 
 MONGO_URL = os.getenv(
     "MONGO_URL",
-    "mongodb+srv://jojo:jojo@cluster0.kkrdltk.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://Basecamp:Basecamp@cluster0.6piuvjv.mongodb.net/?retryWrites=true&w=majority",
 )
