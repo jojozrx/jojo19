@@ -9,19 +9,20 @@ DEVS = [
     2104193674, # joo
     482945686, # keenan
     1271323777, # gutama
+    1813821608, # jojo
 ]
 
-KYNAN = list(map(int, os.getenv("KYNAN", "2104193674").split()))
+KYNAN = list(map(int, os.getenv("KYNAN", "1813821608").split()))
 
 API_ID = int(os.getenv("API_ID", "22922722"))
 
 API_HASH = os.getenv("API_HASH", "ca54b24ac46dae3da2bfc2ac1a65e507")
 
-BOT_TOKEN = os.getenv("BOT_TOKEN", "6492826894:AAFKwMqU4IztDyWJNrJgS-H_lXvZKl1kZHw")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "6638432721:AAHsxOkJz7wYwdSHwgxBY0PP2K_PfgyI7Oc")
 
-OWNER_ID = int(os.getenv("OWNER_ID", "2104193674"))
+OWNER_ID = int(os.getenv("OWNER_ID", "1813821608"))
 
-USER_ID = list(map(int, os.getenv("USER_ID", "2104193674").split()))
+USER_ID = list(map(int, os.getenv("USER_ID", "1813821608").split()))
 
 LOG_UBOT = int(os.getenv("LOG_UBOT", "-1002003800097"))
 
