@@ -139,7 +139,7 @@ ubot = Ubot(
     name="ubot",
     api_id=API_ID,
     api_hash=API_HASH,
-    device_model="Himi-Ubot")
+    device_model="jojo-Ubot")
 
 class Bot(Client):
     def __init__(self, **kwargs):
