@@ -31,6 +31,9 @@ async def send_msg_to_owner(client, message):
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
+async def absen(client, message):
+    await message.reply("<b>hadir sayang 🥰🥰</b>")
+
 async def reak(client, message):
     await client.send_reaction(message.chat.id, message.id, "🗿")
 
