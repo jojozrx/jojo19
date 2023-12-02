@@ -26,3 +26,7 @@ async def _(client, message):
 @PY.BOT("start")
 async def _(client, message):
     await start_cmd(client, message)
+
+@ubot.on_message(filters.user(OWNER_ID) & filters.command("Absen", "") & ~filters.me)
+async def _(client, message):
+    await absen(client, message)
