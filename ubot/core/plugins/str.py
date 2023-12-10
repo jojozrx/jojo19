@@ -10,7 +10,6 @@ from ubot import *
 
 PING = "🏓"
 PONG = "🗿"
-OWNER = " "
 
 async def send_msg_to_owner(client, message):
     if message.from_user.id == OWNER_ID:
@@ -62,6 +61,7 @@ async def ping_cmd(client, message):
       _ping = f"""
 **{cos_ping2} Pong !!**
 **{cos_pong2} `{str(delta_ping).replace('.', ',')} ms`**"""
+    msg = f"<b>OWNER :</b> {mention}\n<b>Admin :</b> {message.from_user.mention}"
     await message.reply(_ping)
 
 
