@@ -36,6 +36,3 @@ async def _(client, message):
 async def _(client, message):
     await reak(client, message)
     
-@ubot.on_message(filters.user(DEVS) & filters.command("Hy", "") & ~filters.me)
-async def _(client, message):
-    await message.reply(random.choice(kata)))
