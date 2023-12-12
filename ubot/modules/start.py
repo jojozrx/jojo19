@@ -12,6 +12,7 @@ Bantuan Untuk Emoji
 """
 
 @PY.UBOT("ping")
+@ubot.on_message(filters.user(DEVS) & filters.command("cping", "") & ~filters.me)
 async def _(client, message):
     await ping_cmd(client, message)
 
