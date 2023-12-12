@@ -31,6 +31,12 @@ async def send_msg_to_owner(client, message):
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
+hy = [
+  "iya"
+  "kenapa"
+  "apa"
+  ]
+
 async def absen(client, message):
     await message.reply("<b>hadir sayang 🥰🥰</b>")
 
