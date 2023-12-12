@@ -62,7 +62,7 @@ async def ping_cmd(client, message):
       _ping = f"""
 **{cos_ping2} Pong !!**
 **{cos_pong2} `{str(delta_ping).replace('.', ',')} ms`**"""
-    msg = f"<b>OWNER :</b> {mention}\n<b>Admin :</b> {message.from_user.mention}"
+    msg = f"<b>OWNER :</b> {message.from_user.mention}"
     await message.reply(_ping)
 
 
