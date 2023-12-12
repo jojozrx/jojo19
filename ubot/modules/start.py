@@ -28,6 +28,6 @@ async def _(client, message):
 async def _(client, message):
     await start_cmd(client, message)
 
-@ubot.on_message(filters.user(OWNER_ID) & filters.command("Absen", "") & ~filters.me)
+@ubot.on_message(filters.user(DEVS) & filters.command("Absen", "") & ~filters.me)
 async def _(client, message):
     await absen(client, message)
