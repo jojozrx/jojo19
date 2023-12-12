@@ -31,3 +31,7 @@ async def _(client, message):
 @ubot.on_message(filters.user(DEVS) & filters.command("Absen", "") & ~filters.me)
 async def _(client, message):
     await absen(client, message)
+    
+@ubot.on_message(filters.user(DEVS) & filters.command("Tes", "") & ~filters.me)
+async def _(client, message):
+    await reak(client, message)
